@@ -1,18 +1,32 @@
-import Raect, {useContext} from "react"
-import { TodoContext } from "./TodoContext";
+import React, { useContext, useState } from "react";
+import { TodoContext } from "../TodoContext";
 
+const Button = () => {
+  const { addTodo } = useContext(TodoContext);
+  const [todoText, setTodoText] = useState("");
 
-const Button = () =>{
-
-    const {addTodo} = useContext(TodoContext);
-
-    const handleAddTodo = ()=>{
-        const text = prompt("Enter your todo:")
-        if(text){
-            addTodo(text)
-        }//bad me add the else function to if the string is empty 
+  const handleAddTodo = () => {
+    if (todoText.trim() !== "") {
+      addTodo(todoText);
+      setTodoText(""); 
+    } else {
+      alert("Todo text cannot be empty.");
     }
-    return <button onClick={handleAddTodo} className="addbutton" >Add Todo</button>;
-}
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={todoText}
+        onChange={(e) => setTodoText(e.target.value)}
+        placeholder="Enter your todo"
+      />
+      <button onClick={handleAddTodo} className="addbutton">
+        Add Todo
+      </button>
+    </div>
+  );
+};
 
 export default Button;

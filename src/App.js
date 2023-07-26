@@ -1,9 +1,16 @@
 import React from "react"
+import Button from "./components/Button"
+import { TodoProvider } from "./TodoContext";
+import TodoList from "./components/TodoList";
+
 function App() {
   return (
+    <TodoProvider>
     <div className="App">
-     <h1>To Do List</h1>
+      <Button />
+      <TodoList />
     </div>
+  </TodoProvider>
   );
 }
 
