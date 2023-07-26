@@ -21,6 +21,7 @@ const Button = () => {
         value={todoText}
         onChange={(e) => setTodoText(e.target.value)}
         placeholder="Enter your todo"
+        className="bttext"
       />
       <button onClick={handleAddTodo} className="addbutton">
         Add Todo

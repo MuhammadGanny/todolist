@@ -15,9 +15,21 @@ const TodoItem = ({ todo }) => {
       updateTodo(todo.id, editedText);
       setEditMode(false);
     };
+
+    const handleToggleComplete = () => {
+        setEditMode(false);
+        updateTodo(todo.id, editedText, !todo.completed); 
+    };
   
     return (
       <li>
+        <input
+            type="checkbox"
+            checked={todo.completed}
+            onChange={handleToggleComplete}
+            className="completed"
+        />
+
         {editMode ? (
           <input
             type="text"
@@ -25,7 +37,7 @@ const TodoItem = ({ todo }) => {
             onChange={(e) => setEditedText(e.target.value)}
           />
         ) : (
-          <span>{todo.text}</span>
+          <span className={todo.completed ? "completed" : ""}>{todo.text}</span>
         )}
   
         {editMode ? (
