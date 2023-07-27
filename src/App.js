@@ -1,5 +1,5 @@
 import React from "react"
-import Button from "./components/Button"
+import Todoadd from "./components/Todoadd"
 import { TodoProvider } from "./TodoContext";
 import TodoList from "./components/TodoList";
 import "./index.css";
@@ -10,7 +10,7 @@ function App() {
     <div className="container">
         <div className="todo-container">
           <h1 className="heading">To Do list</h1>
-          <Button />
+          <Todoadd />
           <TodoList />
         </div>
     </div>

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { TodoContext } from "../TodoContext";
 
-const Button = () => {
+const Todoadd = () => {
   const { addTodo } = useContext(TodoContext);
   const [todoText, setTodoText] = useState("");
 
@@ -30,4 +30,4 @@ const Button = () => {
   );
 };
 
-export default Button;
+export default Todoadd;

@@ -6,7 +6,7 @@ const TodoList = () => {
   const { todos } = useContext(TodoContext);
 
   return (
-    <div className="todo-list"> {/* Make sure this div has the todo-list class */}
+    <div className="todo-list"> 
       <ul>
         {todos.map((todo) => (
           <TodoItem key={todo.id} todo={todo} />

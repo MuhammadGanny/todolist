@@ -28,7 +28,7 @@ code {
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  background-color: rgb(72, 79, 150);
+  background-color: rgb(208, 209, 214);
 }
 .heading{
   color: white;
@@ -97,7 +97,12 @@ input {
   margin-top: 10px;
   margin-left: 32%;
 }
-
+.edittext{
+  background-color: rgb(171, 172, 177);
+  color: black;
+  margin-top: 10px;
+  margin-left: 32%;
+}
 
 
 form {

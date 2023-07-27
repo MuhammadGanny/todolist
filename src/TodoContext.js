@@ -6,12 +6,12 @@ const TodoProvider = ({ children }) => {
   const [todos, setTodos] = useState([]);
 
   const addTodo = (text) => {
-    setTodos([{ id: Date.now(), text },...todos]);
+    setTodos([{ id: Date.now(), text ,completed:false},...todos]);
   };
 
-  const updateTodo = (id, newText) => {
+  const updateTodo = (id, newText,flag) => {
     const updatedTodos = todos.map((todo) =>
-      todo.id === id ? { ...todo, text: newText } : todo
+      todo.id === id ? { ...todo, text: newText,completed:flag } : todo
     );
     setTodos(updatedTodos);
   };

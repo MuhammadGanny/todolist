@@ -29,24 +29,25 @@ const TodoItem = ({ todo }) => {
             onChange={handleToggleComplete}
             className="completed"
         />
-
+        {console.log("todo.completed", todo)}
         {editMode ? (
           <input
             type="text"
             value={editedText}
             onChange={(e) => setEditedText(e.target.value)}
+            className="edittxt"
           />
         ) : (
-          <span className={todo.completed ? "completed" : ""}>{todo.text}</span>
+          <span className={` ${todo.completed && "completed" }`}>{todo.text}</span>
         )}
   
         {editMode ? (
-          <button onClick={handleUpdateTodo}>Save</button>
+          <button onClick={handleUpdateTodo} className="savebutton">Save</button>
         ) : (
-          <button onClick={() => setEditMode(true)}>Edit</button>
+          <button onClick={() => setEditMode(true)} className="editbutton">Edit</button>
         )}
   
-        <button onClick={handleDeleteTodo}>Delete</button>
+        <button onClick={handleDeleteTodo} className="deletebutton">Delete</button>
       </li>
     );
   };
